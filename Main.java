@@ -52,48 +52,53 @@ public class Solution {
         }
     }
 
-//   public static int size(SinglyLinkedListNode currNode){
-//     int count = 0;
-//     while (currNode.next!= null){
-//         count++;
-//     }
-//     return count;
-// }       
+    
+
+
 
     // Complete the findMergeNode function below.
 
-    /*
-     * For your reference:
-     *
-     * SinglyLinkedListNode {
-     *     int data;
-     *     SinglyLinkedListNode next;
-     * }
-     *
-     */
+        public static int countNodes(SinglyLinkedListNode n) {    
+        int count = 0;    
+        //Node current will point to head    
+        SinglyLinkedListNode current = n;    
+            
+        while(current != null) {    
+            //Increment the count by 1 for each node    
+            count++;    
+            current = current.next;    
+        }    
+        return count;    
+    }    
+
     static int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
 
-        // int h1_length = size(head1);
-        // int h2_length = size(head2);
+        int h1_length = countNodes(head1);
+        int h2_length = countNodes(head2);
 
 
-        // while(h1_length > h2_length){
-        //     h1_length--;
-        //     head1 = head1.next;     
-        // }
+        while(h1_length > h2_length){
+            h1_length--;
+            head1 = head1.next;     
+        }
 
 
-        // while(h2_length > h1_length){
-        //     h2_length--;
-        //     head2 = head2.next;     
-        // }
+        while(h2_length > h1_length){
+            h2_length--;
+            head2 = head2.next;     
+        }
 
-        // while(head1 != head2){
-        //     head1 = head1.next;
-        //     head2 = head2.next;   
-        // }
+        while(head1 != head2){
+            head1 = head1.next;
+            head2 = head2.next;   
+        }
+
+        return head1.data;
 
 
+        //   **** Another Solution****
+        
+        /*
         while(head2 != null){
             SinglyLinkedListNode temp_h1 = head1;
 
@@ -111,7 +116,7 @@ public class Solution {
         }
 
         return  0;
-
+*/
 
     }
 
