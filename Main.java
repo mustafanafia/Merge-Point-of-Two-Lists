@@ -58,15 +58,15 @@ public class Solution {
 
     // Complete the findMergeNode function below.
 
-        public static int countNodes(SinglyLinkedListNode n) {    
+        public static int countNodes(SinglyLinkedListNode head) {    
         int count = 0;    
         //Node current will point to head    
-        SinglyLinkedListNode current = n;    
+        SinglyLinkedListNode current_head = head;    
             
-        while(current != null) {    
+        while(current_head != null) {    
             //Increment the count by 1 for each node    
             count++;    
-            current = current.next;    
+            current_head = current_head.next;    
         }    
         return count;    
     }    
